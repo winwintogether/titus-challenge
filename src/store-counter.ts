@@ -12,18 +12,20 @@ export class StoreCounter {
 
 
   public print(): void {
-    console.log('\n****************      Receipt     ****************');
+    let receipt = '';
 
-    console.log('\nName    Price     Count     Total');
+    receipt += '\n****************      Receipt     ****************';
+    receipt += '\nName    Price     Count     Total';
 
     if (this.products.length) {
       this.products.forEach(item => {
-        console.log(item.name, '     ', item.price, '      ', `${item.count}${item.discount ? `(free: ${item.discount})` : '         '}`, item.total);
+        receipt += `\n${item.name}       ${item.price}        ${item.count}${item.discount ? `(free: ${item.discount})` : '         '} ${item.total}`
       })
 
-      console.log('\nTotal Price: ', this.totalPrice);
-      console.log('\n*****************     End     ********************\n');
+      receipt += `\nTotal Price:  ${this.totalPrice}`;
+      receipt += '\n*****************     End     ********************\n';
     }
+    console.log(receipt)
   }
 
   public getProductTotal(product: Product): void {
