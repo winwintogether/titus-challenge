@@ -1,7 +1,7 @@
 {
   "name": "grocery-store-checkout-counter",
   "scripts": {
-    "test": "mocha --require ts-node/register src/test/**/*_spec.ts"
+    "test": "mocha --require ts-node/register test/**/*_spec.ts"
   },
   "devDependencies": {
     "@types/chai": "^4.3.4",
